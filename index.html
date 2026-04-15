@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Restaurant - Carte</title>
+  <meta name="description" content="Carte du restaurant accessible par QR code" />
+  <style>
+    :root {
+      --bg: #f7f3ee;
+      --card: #ffffff;
+      --text: #1f1a17;
+      --muted: #6e6258;
+      --accent: #8b3d22;
+      --accent-2: #d9b38c;
+      --line: #eadfd4;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .container {
+      width: min(920px, calc(100% - 24px));
+      margin: 0 auto;
+      padding: 24px 0 48px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #fff8f2, #f2e3d4);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 28px 20px;
+      margin-bottom: 18px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid var(--line);
+      color: var(--accent);
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 34px;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin: 18px 0 22px;
+    }
+
+    .info-card, .section {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .info-card h2,
+    .section h2 {
+      margin: 0 0 12px;
+      font-size: 20px;
+      color: var(--accent);
+    }
+
+    .section {
+      margin-bottom: 14px;
+    }
+
+    .item {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 12px 0;
+      border-bottom: 1px dashed var(--line);
+    }
+
+    .item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .item-name {
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+    .item-desc {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .price {
+      white-space: nowrap;
+      font-weight: bold;
+      color: var(--accent);
+    }
+
+    .footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+      padding-top: 10px;
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 28px; }
+      .item { flex-direction: column; gap: 6px; }
+      .price { white-space: normal; }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <div class="badge">Carte du restaurant</div>
+      <h1>Nom du Restaurant</h1>
+      <p class="subtitle">Cuisine maison • Sur place • À emporter</p>
+    </section>
+
+    <section class="info">
+      <div class="info-card">
+        <h2>Horaires</h2>
+        <p>Lundi - Samedi</p>
+        <p>11h30 - 14h30 • 18h30 - 22h30</p>
+      </div>
+      <div class="info-card">
+        <h2>Contact</h2>
+        <p>Téléphone : 06 94 00 00 00</p>
+        <p>WhatsApp : 06 94 00 00 00</p>
+      </div>
+      <div class="info-card">
+        <h2>Adresse</h2>
+        <p>12 rue Exemple</p>
+        <p>Cayenne, Guyane française</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Entrées</h2>
+      <div class="item">
+        <div>
+          <div class="item-name">Accras de morue</div>
+          <div class="item-desc">Servis chauds avec sauce maison.</div>
+        </div>
+        <div class="price">6,50 €</div>
+      </div>
+      <div class="item">
+        <div>
+          <div class="item-name">Salade créole</div>
+          <div class="item-desc">Crudités fraîches et assaisonnement maison.</div>
+        </div>
+        <div class="price">7,50 €</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Plats</h2>
+      <div class="item">
+        <div>
+          <div class="item-name">Poulet boucané</div>
+          <div class="item-desc">Accompagné de riz parfumé et légumes du jour.</div>
+        </div>
+        <div class="price">14,90 €</div>
+      </div>
+      <div class="item">
+        <div>
+          <div class="item-name">Poisson grillé</div>
+          <div class="item-desc">Selon arrivage, servi avec bananes plantain.</div>
+        </div>
+        <div class="price">16,90 €</div>
+      </div>
+      <div class="item">
+        <div>
+          <div class="item-name">Burger maison</div>
+          <div class="item-desc">Steak, cheddar, salade, tomate, sauce maison.</div>
+        </div>
+        <div class="price">13,50 €</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Desserts</h2>
+      <div class="item">
+        <div>
+          <div class="item-name">Tarte coco</div>
+          <div class="item-desc">Recette maison.</div>
+        </div>
+        <div class="price">5,50 €</div>
+      </div>
+      <div class="item">
+        <div>
+          <div class="item-name">Flan caramel</div>
+          <div class="item-desc">Servi frais.</div>
+        </div>
+        <div class="price">4,90 €</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Boissons</h2>
+      <div class="item">
+        <div>
+          <div class="item-name">Jus local</div>
+          <div class="item-desc">Maracudja, goyave ou ananas.</div>
+        </div>
+        <div class="price">3,50 €</div>
+      </div>
+      <div class="item">
+        <div>
+          <div class="item-name">Soda</div>
+          <div class="item-desc">33 cl.</div>
+        </div>
+        <div class="price">2,50 €</div>
+      </div>
+    </section>
+
+    <p class="footer">Merci pour votre visite • Scannez ce QR code pour consulter la carte</p>
+  </main>
+</body>
+</html>
