@@ -3,17 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Restaurant - Carte</title>
-  <meta name="description" content="Carte du restaurant accessible par QR code" />
+  <title>Jok's Foood - Carte</title>
+  <meta name="description" content="Carte de Jok's Foood accessible par QR code" />
   <style>
     :root {
-      --bg: #f7f3ee;
-      --card: #ffffff;
-      --text: #1f1a17;
-      --muted: #6e6258;
-      --accent: #8b3d22;
-      --accent-2: #d9b38c;
-      --line: #eadfd4;
+      --bg: #0f0f10;
+      --card: #171719;
+      --card-2: #1d1d20;
+      --text: #f6f1e8;
+      --muted: #c5b89c;
+      --gold: #d4af37;
+      --gold-soft: #8d7428;
+      --line: #3a3020;
     }
 
     * { box-sizing: border-box; }
@@ -21,46 +22,58 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: var(--bg);
+      background:
+        radial-gradient(circle at top, #1d1b16 0%, #0f0f10 45%),
+        var(--bg);
       color: var(--text);
       line-height: 1.5;
     }
 
     .container {
-      width: min(920px, calc(100% - 24px));
+      width: min(960px, calc(100% - 24px));
       margin: 0 auto;
       padding: 24px 0 48px;
     }
 
     .hero {
-      background: linear-gradient(135deg, #fff8f2, #f2e3d4);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 28px 20px;
+      background: linear-gradient(145deg, #171719, #111214);
+      border: 1px solid var(--gold-soft);
+      border-radius: 22px;
+      padding: 30px 20px;
       margin-bottom: 18px;
       text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.28);
     }
 
     .badge {
       display: inline-block;
       padding: 6px 12px;
       border-radius: 999px;
-      background: #fff;
-      border: 1px solid var(--line);
-      color: var(--accent);
+      background: rgba(212, 175, 55, 0.08);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      color: var(--gold);
       font-size: 14px;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
     }
 
     h1 {
       margin: 0 0 8px;
       font-size: 34px;
+      color: var(--gold);
     }
 
     .subtitle {
       margin: 0;
+      color: var(--text);
+      font-size: 17px;
+    }
+
+    .tagline {
+      margin-top: 8px;
       color: var(--muted);
-      font-size: 16px;
+      font-size: 15px;
+      font-style: italic;
     }
 
     .info {
@@ -71,21 +84,29 @@
     }
 
     .info-card, .section {
-      background: var(--card);
+      background: linear-gradient(180deg, var(--card), var(--card-2));
       border: 1px solid var(--line);
       border-radius: 18px;
       padding: 18px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.18);
     }
 
     .info-card h2,
     .section h2 {
       margin: 0 0 12px;
       font-size: 20px;
-      color: var(--accent);
+      color: var(--gold);
     }
 
     .section {
       margin-bottom: 14px;
+    }
+
+    .section-note {
+      margin-top: -4px;
+      margin-bottom: 12px;
+      color: var(--muted);
+      font-size: 14px;
     }
 
     .item {
@@ -104,6 +125,7 @@
     .item-name {
       font-weight: bold;
       margin-bottom: 4px;
+      color: var(--text);
     }
 
     .item-desc {
@@ -114,7 +136,12 @@
     .price {
       white-space: nowrap;
       font-weight: bold;
-      color: var(--accent);
+      color: var(--gold);
+    }
+
+    .highlight {
+      color: var(--gold);
+      font-weight: bold;
     }
 
     .footer {
@@ -122,6 +149,11 @@
       color: var(--muted);
       font-size: 14px;
       padding-top: 10px;
+    }
+
+    a {
+      color: var(--gold);
+      text-decoration: none;
     }
 
     @media (max-width: 640px) {
@@ -135,104 +167,120 @@
   <main class="container">
     <section class="hero">
       <div class="badge">Carte du restaurant</div>
-      <h1>Nom du Restaurant</h1>
-      <p class="subtitle">Cuisine maison • Sur place • À emporter</p>
+      <h1>Jok's Foood</h1>
+      <p class="subtitle">Cuisine savoureuse • Sur place • À emporter</p>
+      <p class="tagline">Le goût dans votre assiette</p>
     </section>
 
     <section class="info">
       <div class="info-card">
         <h2>Horaires</h2>
-        <p>Lundi - Samedi</p>
-        <p>11h30 - 14h30 • 18h30 - 22h30</p>
+        <p>11h30 à 15h00</p>
+        <p>19h00 à 23h00</p>
       </div>
       <div class="info-card">
         <h2>Contact</h2>
-        <p>Téléphone : 06 94 00 00 00</p>
-        <p>WhatsApp : 06 94 00 00 00</p>
+        <p>Téléphone / WhatsApp :</p>
+        <p><a href="tel:+594694377949">0694377949</a></p>
       </div>
       <div class="info-card">
         <h2>Adresse</h2>
-        <p>12 rue Exemple</p>
-        <p>Cayenne, Guyane française</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Entrées</h2>
-      <div class="item">
-        <div>
-          <div class="item-name">Accras de morue</div>
-          <div class="item-desc">Servis chauds avec sauce maison.</div>
-        </div>
-        <div class="price">6,50 €</div>
-      </div>
-      <div class="item">
-        <div>
-          <div class="item-name">Salade créole</div>
-          <div class="item-desc">Crudités fraîches et assaisonnement maison.</div>
-        </div>
-        <div class="price">7,50 €</div>
+        <p>23 Allée de l’Université Cambridge</p>
+        <p>Résidence Moucaya, 97300 Cayenne</p>
       </div>
     </section>
 
     <section class="section">
       <h2>Plats</h2>
+      <p class="section-note">Tous les plats sont à <span class="highlight">15 €</span>.</p>
+
       <div class="item">
         <div>
-          <div class="item-name">Poulet boucané</div>
-          <div class="item-desc">Accompagné de riz parfumé et légumes du jour.</div>
+          <div class="item-name">Crevettes sauce piment doux</div>
+          <div class="item-desc">Servies avec accompagnement au choix.</div>
         </div>
-        <div class="price">14,90 €</div>
+        <div class="price">15 €</div>
       </div>
+
       <div class="item">
         <div>
-          <div class="item-name">Poisson grillé</div>
-          <div class="item-desc">Selon arrivage, servi avec bananes plantain.</div>
+          <div class="item-name">Magret de Canard</div>
+          <div class="item-desc">Préparé avec accompagnement au choix.</div>
         </div>
-        <div class="price">16,90 €</div>
+        <div class="price">15 €</div>
       </div>
+
       <div class="item">
         <div>
-          <div class="item-name">Burger maison</div>
-          <div class="item-desc">Steak, cheddar, salade, tomate, sauce maison.</div>
+          <div class="item-name">Pavé de Saumon à l'ail</div>
+          <div class="item-desc">Servi chaud avec accompagnement au choix.</div>
         </div>
-        <div class="price">13,50 €</div>
+        <div class="price">15 €</div>
       </div>
     </section>
 
     <section class="section">
-      <h2>Desserts</h2>
+      <h2>Accompagnements</h2>
+
       <div class="item">
         <div>
-          <div class="item-name">Tarte coco</div>
-          <div class="item-desc">Recette maison.</div>
+          <div class="item-name">Riz</div>
+          <div class="item-desc">Accompagnement au choix avec votre plat.</div>
         </div>
-        <div class="price">5,50 €</div>
       </div>
+
       <div class="item">
         <div>
-          <div class="item-name">Flan caramel</div>
-          <div class="item-desc">Servi frais.</div>
+          <div class="item-name">Purée de pommes de terre maison</div>
+          <div class="item-desc">Préparation maison.</div>
         </div>
-        <div class="price">4,90 €</div>
       </div>
     </section>
 
     <section class="section">
       <h2>Boissons</h2>
+      <p class="section-note">Pour les prix des boissons, merci de demander au serveur.</p>
+
       <div class="item">
         <div>
-          <div class="item-name">Jus local</div>
-          <div class="item-desc">Maracudja, goyave ou ananas.</div>
+          <div class="item-name">Coca</div>
         </div>
-        <div class="price">3,50 €</div>
+        <div class="price">Demander</div>
       </div>
+
       <div class="item">
         <div>
-          <div class="item-name">Soda</div>
-          <div class="item-desc">33 cl.</div>
+          <div class="item-name">Jus de fruit</div>
         </div>
-        <div class="price">2,50 €</div>
+        <div class="price">Demander</div>
+      </div>
+
+      <div class="item">
+        <div>
+          <div class="item-name">Cocktail sans alcool</div>
+        </div>
+        <div class="price">Demander</div>
+      </div>
+
+      <div class="item">
+        <div>
+          <div class="item-name">Cocktail avec alcool</div>
+        </div>
+        <div class="price">Demander</div>
+      </div>
+
+      <div class="item">
+        <div>
+          <div class="item-name">Martini</div>
+        </div>
+        <div class="price">Demander</div>
+      </div>
+
+      <div class="item">
+        <div>
+          <div class="item-name">Caïpirinha</div>
+        </div>
+        <div class="price">Demander</div>
       </div>
     </section>
 
